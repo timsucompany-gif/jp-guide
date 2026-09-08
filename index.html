@@ -263,6 +263,14 @@ h3:first-child{margin-top:0}
 .steps p{font-size:16px;margin:0 0 1em}
 .steps p:last-child{margin-bottom:0}
 
+/* ---------- 兩種方式 ---------- */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+@media (max-width:520px){.ways{grid-template-columns:1fr}}
+.ways>div{border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;background:var(--bg-soft-cream)}
+.ways .w-tag{display:inline-block;font-size:12px;font-weight:750;color:#fff;background:var(--primary-fuji-blue);padding:2px 10px;border-radius:999px;margin-bottom:7px}
+.ways b{display:block;font-size:15.5px;color:var(--text-dark-gray);margin-bottom:3px}
+.ways span{font-size:14px;color:var(--ink-2);line-height:1.7}
+
 /* ---------- 情境 ---------- */
 .scene{background:var(--tint-blue);border-radius:var(--radius-sm);padding:14px 16px;margin:16px 0 0;font-size:15px;line-height:1.8;color:var(--ink-2)}
 .scene b{color:var(--blue-ink)}
@@ -634,10 +642,50 @@ footer strong{color:var(--ink-2)}
 
       <ol class="steps">
         <li>
-          <h3>結帳時出示護照，付「含稅價」</h3>
-          <p>跟以前一樣，在免稅櫃檯出示護照，店員會把購買紀錄傳到日本國稅廳的系統。差別只有一個：<strong>結帳金額是含稅的</strong>。</p>
-          <p>同時，店家會請你<strong>登記退款方式</strong>——匯款帳號、信用卡、行動支付，或是選擇之後在機場領現金。這一步千萬別漏掉，不然錢不知道要退去哪裡。</p>
+          <h3>結帳時出示身分證件，付「含稅價」</h3>
+          <p>在免稅櫃檯出示證件，店員會把購買紀錄傳到日本國稅廳的系統。證件有<strong>兩種方式</strong>可以選：</p>
+
+          <div class="ways">
+            <div>
+              <span class="w-tag">方法 1</span>
+              <b>Visit Japan Web 的免稅 QR Code</b>
+              <span>當場打開 App 出示，不用把護照交出去</span>
+            </div>
+            <div>
+              <span class="w-tag">方法 2</span>
+              <b>直接出示護照本人</b>
+              <span>最保險，所有店家都接受</span>
+            </div>
+          </div>
+
+          <p>國稅廳明訂「出示護照」<strong>包含出示 Visit Japan Web 的二維條碼</strong>，兩種效力相同。但<strong>要不要支援 QR Code 是各店家自行決定</strong>，所以護照一定要隨身帶著。</p>
+          <p>接著店家會請你<strong>登記退款方式</strong>——匯款帳號、信用卡、行動支付，或是選擇之後在機場領現金。這一步千萬別漏掉，不然錢不知道要退去哪裡。</p>
+
           <div class="scene"><b>小美：</b>在藥妝店買了 8,800 日圓（含稅）。舊制她只要付 8,000；新制要先付滿 8,800，那 800 日圓之後才會回來。</div>
+
+          <details class="disclose">
+            <summary>Visit Japan Web 的 QR Code 怎麼用？有哪些眉角</summary>
+            <div class="disclose__body">
+              <h3>誰可以用</h3>
+              <p>QR Code 只有在<strong>在留資格為「短期滯在」、外交、公用</strong>，而且上陸許可還在效期內時才產生得出來。一般台灣觀光客都是短期滯在，<strong>可以用</strong>。</p>
+              <p>以下三種人產不出 QR Code，<strong>只能出示護照</strong>：</p>
+              <ul class="crosses">
+                <li>持日本護照、長住海外的人</li>
+                <li>以各種上陸許可入境的人（船舶觀光、乘員、緊急、遇難等）</li>
+                <li>美軍相關人員</li>
+              </ul>
+
+              <h3>三個一定要知道的規則</h3>
+              <ul class="plain">
+                <li><strong>不能用截圖，也不能印出來。</strong>必須當場在 App 裡顯示。畫面上有一個<strong>會走動的時鐘</strong>，店員就是靠這個判斷你不是拿截圖。</li>
+                <li><strong>有效期限只有 24 小時。</strong>從產生 QR Code 起算，過期就按更新鈕重新產生一次。（若上陸許可期限更早到期，則以許可期限為準。）</li>
+                <li><strong>畫面上會顯示你的照片</strong>，店員用來確認是你本人，所以不能請朋友代刷。</li>
+              </ul>
+
+              <h3>好處是什麼</h3>
+              <p>不用把護照交到店員手上、不用等他們逐欄輸入，結帳快很多。旺季藥妝店排長龍時差別特別明顯。</p>
+            </div>
+          </details>
         </li>
         <li>
           <h3>把商品和收據留著，別隨手送人</h3>
@@ -850,6 +898,10 @@ footer strong{color:var(--ink-2)}
           <div class="a"><p>可以。機場出境審查之後（管制區內）的免稅商店屬於保稅商店，走的是另一套制度，當場就是免稅價，不需要這套海關確認與退款流程。這裡說的新制，指的是<strong>市區免稅店</strong>。不確定的話，結帳前直接問店員「這裡需要辦退稅手續嗎」最快。</p></div>
         </details>
         <details>
+          <summary>結帳時一定要拿出護照嗎？可以用 Visit Japan Web 嗎？</summary>
+          <div class="a"><p>可以。國稅廳規定「出示護照」<strong>包含出示 Visit Japan Web 的免稅用二維條碼</strong>，兩者效力相同。不過<strong>要不要支援 QR Code 由各店家自行決定</strong>，不是每家都有，護照還是要隨身帶。</p><p>用 QR Code 有三個限制：<strong>不能用截圖或列印</strong>（畫面上有會走動的時鐘可辨識）、<strong>有效期限 24 小時</strong>、畫面會顯示你的照片以確認本人。另外持日本護照的海外居住者、以上陸許可入境者、美軍相關人員無法產生 QR Code，只能出示護照。</p></div>
+        </details>
+        <details>
           <summary>什麼時候會收到錢？</summary>
           <div class="a"><p>基本上是在<strong>機場完成海關確認、免稅成立之後</strong>，由免稅店或其委託的退款業者退款。實際到帳時間依各店家和退款方式而異，官方建議直接向購買的免稅店確認。</p></div>
         </details>
@@ -872,7 +924,9 @@ footer strong{color:var(--ink-2)}
         <li><a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00023.html" target="_blank" rel="noopener">日本觀光廳｜旅客常見問題 Q&amp;A</a><small>購買時、出境時、退款三大類官方問答</small></li>
         <li><a href="https://www.nta.go.jp/publication/pamph/shohi/menzei/201805/format/002.htm" target="_blank" rel="noopener">日本國稅廳｜制度改為リファンド方式</a><small>法令面的官方說明</small></li>
         <li><a href="https://www.mlit.go.jp/kankocho/content/001858413.pdf" target="_blank" rel="noopener">財務省・國稅廳・經產省・觀光廳｜制度檢討資料（PDF）</a><small>改制背景、機場動線與 90 天規則</small></li>
-        <li><a href="https://www.mlit.go.jp/kankocho/tax-free/content/001977883.pdf" target="_blank" rel="noopener">日本觀光廳｜新舊制比較表（PDF）</a></li>
+        <li><a href="https://www.nta.go.jp/publication/pamph/shohi/menzei/201805/pdf/0025012-025_01.pdf" target="_blank" rel="noopener">日本國稅廳｜リファンド方式 制度解說（PDF）</a><small>免稅販售手續、Visit Japan Web 二維條碼、機場判定流程</small></li>
+    <li><a href="https://www.nta.go.jp/publication/pamph/shohi/menzei/201805/pdf/0022012-150.pdf" target="_blank" rel="noopener">日本國稅廳｜Visit Japan Web 免稅手續常見問題（PDF）</a><small>QR Code 適用對象、有效期限、截圖限制</small></li>
+    <li><a href="https://www.mlit.go.jp/kankocho/tax-free/content/001977883.pdf" target="_blank" rel="noopener">日本觀光廳｜新舊制比較表（PDF）</a></li>
         <li><a href="https://services.digital.go.jp/visit-japan-web/" target="_blank" rel="noopener">Visit Japan Web（日本數位廳）</a><small>7 大機場可用於線上辦理</small></li>
       </ul>
     </div>
@@ -995,7 +1049,7 @@ footer strong{color:var(--ink-2)}
       "inLanguage": "zh-Hant-TW",
       "totalTime": "PT15M",
       "step": [
-        { "@type": "HowToStep", "position": 1, "name": "在店裡出示護照並付含稅價", "text": "在免稅櫃檯出示護照建立購買紀錄，結帳金額為含稅價，並登記你的退款方式（匯款、信用卡、行動支付或機場現金）。", "url": "https://timsucompany-gif.github.io/jp-guide/#flow" },
+        { "@type": "HowToStep", "position": 1, "name": "在店裡出示護照或 Visit Japan Web 二維條碼並付含稅價", "text": "在免稅櫃檯出示護照或 Visit Japan Web 的免稅二維條碼建立購買紀錄（兩者效力相同，但店家未必支援 QR Code），結帳金額為含稅價，並登記你的退款方式（匯款、信用卡、行動支付或機場現金）。", "url": "https://timsucompany-gif.github.io/jp-guide/#flow" },
         { "@type": "HowToStep", "position": 2, "name": "旅途中保留商品與收據", "text": "同一張收據上的商品出境時必須全部在身上，少一件整筆都無法通過確認；消耗品在日本消費掉就不能退。", "url": "https://timsucompany-gif.github.io/jp-guide/#flow" },
         { "@type": "HowToStep", "position": 3, "name": "機場託運行李前刷護照接受海關確認", "text": "在國際線出境大廳的免稅手續機台（KIOSK／電子端末）出示護照，判定 GREEN 免查驗、RED 需查驗。務必在託運行李之前完成。", "url": "https://timsucompany-gif.github.io/jp-guide/#airport" },
         { "@type": "HowToStep", "position": 4, "name": "免稅成立後收到退款", "text": "海關確認資訊回傳店家後免稅成立，由免稅店或其委託的退款業者以匯款、信用卡、App 或現金退還消費稅相當額。", "url": "https://timsucompany-gif.github.io/jp-guide/#flow" }
@@ -1012,6 +1066,7 @@ footer strong{color:var(--ink-2)}
         { "@type": "Question", "name": "消耗品的封口袋取消了，那我可以在日本先用嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不行。特殊包裝雖然廢除，但只要在日本境內消費掉就不能通過海關確認、也拿不到退款。已使用一部分時請到海關人工窗口申報已消費。" } },
         { "@type": "Question", "name": "買太多帶不動，可以寄回台灣嗎？", "acceptedAnswer": { "@type": "Answer", "text": "自行從郵局寄回國的「別送」制度已於 2025 年 3 月 31 日廢止，免稅品必須本人隨身帶出境。由店家直接寄送海外的「直送」仍存在，但屬另一套輸出免稅制度，是否提供請洽店家。" } },
         { "@type": "Question", "name": "一筆消費裡有一件東西弄丟了，其他還能退嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不能。海關確認以一次購買手續（一張購買紀錄）為單位，只要其中一件無法出示，同一張收據上的其他免稅品也一併無法通過確認、無法退款。" } },
+        { "@type": "Question", "name": "結帳時一定要拿出護照嗎？可以用 Visit Japan Web 嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。國稅廳規定「出示護照」包含出示 Visit Japan Web 的免稅用二維條碼，兩者效力相同。但要不要支援 QR Code 由各店家自行決定，護照仍應隨身攜帶。QR Code 不能用截圖或列印、有效期限 24 小時、畫面會顯示照片以確認本人；持日本護照的海外居住者、以上陸許可入境者、美軍相關人員無法產生 QR Code。" } },
         { "@type": "Question", "name": "行李已經託運了才想起來要退稅，怎麼辦？", "acceptedAnswer": { "@type": "Answer", "text": "官方 Q&A 明確表示已託運的行李無法取回，所以務必在把行李交給航空公司之前，先到免稅手續機台完成手續。" } }
       ]
     }
