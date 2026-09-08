@@ -9,4 +9,10 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://timsucompany-gif.github.io/jp-guide/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://timsucompany-gif.github.io/jp-guide/"/>
   </url>
+  <url>
+    <loc>https://timsucompany-gif.github.io/jp-guide/privacy.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
