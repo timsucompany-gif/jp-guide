@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>JP Guide 文章總覽｜日本旅遊實用資訊</title>
-<meta name="description" content="JP Guide 全部文章：日本入境準備（Visit Japan Web 登錄教學、入境免稅額度）與購物退稅（2026 年 11 月上路的機場退稅新制）。全部依日本政府官方公告整理，附原始資料出處與實用試算工具。">
+<meta name="description" content="JP Guide 全部文章：景點體驗（史努比博物館手作課程預約）、入境準備（Visit Japan Web 登錄教學）與購物退稅（2026 年 11 月上路的機場退稅新制）。官方資料查證＋實地分享，附原始出處與試算工具。">
 <meta name="keywords" content="日本旅遊,日本入境,Visit Japan Web,日本退稅,日本免稅,日本旅遊攻略">
 <meta name="author" content="JP Guide">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -96,6 +96,7 @@ main{padding:16px 0 0}
 .group__head{display:flex;align-items:center;gap:10px;margin:0 0 18px}
 .group__tag{font-size:12.5px;font-weight:750;letter-spacing:.05em;color:#fff;background:var(--primary-fuji-blue);padding:4px 13px;border-radius:999px}
 .group__tag.is-green{background:var(--success-green);color:#0d3d24}
+.group__tag.is-purple{background:#7d5ba6}
 .group h2{font-size:19px;margin:0;font-weight:800;line-height:1.5}
 .group__count{margin-left:auto;font-size:13px;color:var(--ink-3)}
 
@@ -107,6 +108,12 @@ main{padding:16px 0 0}
 .card__body{padding:22px 24px 24px}
 .card__badge{display:inline-block;font-size:12px;font-weight:750;color:#fff;background:var(--accent-torii-red);padding:3px 11px;border-radius:999px;margin-bottom:9px}
 .card__badge.is-blue{background:var(--primary-fuji-blue)}
+.card__badge.is-purple{background:#7d5ba6}
+.card__head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.card__head .card__badge{margin-bottom:0}
+.card__source{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:3px 11px;border-radius:999px;border:1px solid}
+.card__source.is-official{color:var(--blue-ink);background:var(--tint-blue);border-color:#bcd9ef}
+.card__source.is-personal{color:#8a5a09;background:#fdf6e7;border-color:#f6dfae}
 .card h3{font-size:19.5px;line-height:1.5;margin:0 0 8px;font-weight:800;color:var(--text-dark-gray)}
 .card p{font-size:15px;color:var(--ink-2);margin:0 0 12px;line-height:1.75}
 .card__meta{display:flex;flex-wrap:wrap;gap:6px}
@@ -128,6 +135,7 @@ footer a{font-weight:600}
   <div class="topbar__in">
     <a class="brand" href="/"><span class="brand__dot">JP</span>JP Guide</a>
     <nav aria-label="頁面導覽">
+      <a href="#spots">景點體驗</a>
       <a href="#entry">入境準備</a>
       <a href="#shopping">購物退稅</a>
     </nav>
@@ -144,6 +152,33 @@ footer a{font-weight:600}
 <main id="main">
 <div class="wrap">
 
+  <section class="group" id="spots">
+    <div class="group__head">
+      <span class="group__tag is-purple">景點體驗</span>
+      <h2>去哪裡玩、怎麼預約</h2>
+      <span class="group__count">1 篇</span>
+    </div>
+    <div class="articles">
+      <a class="card" href="snoopy-museum/">
+        <img class="card__img" src="snoopy-museum/images/banner.jpg" width="1408" height="768" loading="eager" decoding="async"
+             alt="東京史努比博物館手作課程預約懶人包">
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__badge is-purple">熱門詢問</span>
+            <span class="card__source is-personal">個人分享</span>
+          </div>
+          <h3>東京史努比博物館 手作課程預約懶人包</h3>
+          <p>四種手作課程怎麼選、什麼時候開賣、沒有日本電話怎麼辦。重點是走 eplus 國際購票站就免註冊會員，很多攻略沒寫到這件事。</p>
+          <div class="card__meta">
+            <span class="chip">免日本電話</span>
+            <span class="chip">開賣時間</span>
+            <span class="chip is-green">7 個踩雷</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <section class="group" id="entry">
     <div class="group__head">
       <span class="group__tag is-green">入境準備</span>
@@ -152,10 +187,13 @@ footer a{font-weight:600}
     </div>
     <div class="articles">
       <a class="card" href="visit-japan-web/">
-        <img class="card__img" src="visit-japan-web/images/banner.jpg" width="1408" height="768" loading="eager" decoding="async"
+        <img class="card__img" src="visit-japan-web/images/banner.jpg" width="1408" height="768" loading="lazy" decoding="async"
              alt="Visit Japan Web 完整登錄教學">
         <div class="card__body">
-          <span class="card__badge is-blue">入境必備</span>
+          <div class="card__head">
+            <span class="card__badge is-blue">入境必備</span>
+            <span class="card__source is-official">官方資料</span>
+          </div>
           <h3>Visit Japan Web 完整教學</h3>
           <p>出發前十分鐘上網登錄，抵達日本時出示一個 QR Code，入境審查和海關申報就都完成了。從註冊到過關走一遍。</p>
           <div class="card__meta">
@@ -179,7 +217,10 @@ footer a{font-weight:600}
         <img class="card__img" src="tax-refund/images/banner.jpg" width="1408" height="768" loading="lazy" decoding="async"
              alt="2026 日本退稅新制懶人包">
         <div class="card__body">
-          <span class="card__badge">2026 / 11 / 01 上路</span>
+          <div class="card__head">
+            <span class="card__badge">2026 / 11 / 01 上路</span>
+            <span class="card__source is-official">官方資料</span>
+          </div>
           <h3>2026 日本退稅新制懶人包</h3>
           <p>日本的免稅從 11 月 1 日起大改版：店裡先付含稅價，出境時在機場給海關確認之後，錢才退到你手上。資格、門檻、90 天期限、機場流程與踩雷清單一次看懂。</p>
           <div class="card__meta">
@@ -230,8 +271,9 @@ footer a{font-weight:600}
     {
       "@type": "ItemList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Visit Japan Web 完整教學", "url": "https://timsucompany-gif.github.io/jp-guide/visit-japan-web/" },
-        { "@type": "ListItem", "position": 2, "name": "2026 日本退稅新制懶人包", "url": "https://timsucompany-gif.github.io/jp-guide/tax-refund/" }
+        { "@type": "ListItem", "position": 1, "name": "東京史努比博物館手作課程預約懶人包", "url": "https://timsucompany-gif.github.io/jp-guide/snoopy-museum/" },
+        { "@type": "ListItem", "position": 2, "name": "Visit Japan Web 完整教學", "url": "https://timsucompany-gif.github.io/jp-guide/visit-japan-web/" },
+        { "@type": "ListItem", "position": 3, "name": "2026 日本退稅新制懶人包", "url": "https://timsucompany-gif.github.io/jp-guide/tax-refund/" }
       ]
     }
   ]
