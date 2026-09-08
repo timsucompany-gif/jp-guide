@@ -49,14 +49,9 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" as="image" href="banner.jpg" fetchpriority="high">
 
-<!-- ===== Google AdSense =====
-     1. 把全檔的 PUBLISHER_ID 換成你的發布商 ID（16 位數字，不含 ca-pub- 前綴）
-     2. 把 AD_SLOT_1 / AD_SLOT_2 / AD_SLOT_3 換成三個廣告單元的 ID（各 10 位數字）
-     3. 解除下面兩行的註解
-     4. 把 ads.txt 裡的 PUBLISHER_ID 也一起換掉
+<!-- Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-6600085221791202">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6600085221791202" crossorigin="anonymous"></script>
--->
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C189LND5BX"></script>
@@ -412,6 +407,7 @@ td.new{font-weight:650}
   border:1px dashed var(--line);border-radius:var(--radius-md);background:var(--line-2);overflow:hidden}
 .ad-wrap{padding:34px 24px}
 .ad-slot__label{font-size:11px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase}
+.ad-slot.is-empty{display:none}
 .ad-slot ins{display:block;width:100%}
 
 /* ---------- 頁尾 ---------- */
@@ -524,9 +520,10 @@ footer strong{color:var(--ink-2)}
 
 <div class="ad-wrap">
   <!-- ===== 廣告版位 1｜文章上方 ===== -->
-  <aside class="ad-slot" aria-label="廣告">
+  <aside class="ad-slot is-empty" aria-label="廣告">
     <span class="ad-slot__label">Advertisement</span>
-    <!-- 廣告單元 1：文章上方（30 秒重點之後）｜建議在 AdSense 後台建立「多媒體廣告 → 回應式」 -->
+    <!-- 廣告單元 1：文章上方（30 秒重點之後）｜建議在 AdSense 後台建立「多媒體廣告 → 回應式」
+         取得單元 ID 後：把下方 AD_SLOT_1 換成 10 位數字，解除註解，並移除 aside 的 is-empty class
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-6600085221791202"
@@ -534,6 +531,7 @@ footer strong{color:var(--ink-2)}
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
   </aside>
 </div>
 
@@ -700,9 +698,10 @@ footer strong{color:var(--ink-2)}
 
 <div class="ad-wrap">
   <!-- ===== 廣告版位 2｜文章中段 ===== -->
-  <aside class="ad-slot" aria-label="廣告">
+  <aside class="ad-slot is-empty" aria-label="廣告">
     <span class="ad-slot__label">Advertisement</span>
-    <!-- 廣告單元 2：文章中段（能退什麼之後）｜建議在 AdSense 後台建立「多媒體廣告 → 回應式」 -->
+    <!-- 廣告單元 2：文章中段（能退什麼之後）｜建議在 AdSense 後台建立「多媒體廣告 → 回應式」
+         取得單元 ID 後：把下方 AD_SLOT_2 換成 10 位數字，解除註解，並移除 aside 的 is-empty class
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-6600085221791202"
@@ -710,6 +709,7 @@ footer strong{color:var(--ink-2)}
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
   </aside>
 </div>
 
@@ -899,9 +899,10 @@ footer strong{color:var(--ink-2)}
 
 <div class="ad-wrap">
   <!-- ===== 廣告版位 3｜試算器前 ===== -->
-  <aside class="ad-slot" aria-label="廣告">
+  <aside class="ad-slot is-empty" aria-label="廣告">
     <span class="ad-slot__label">Advertisement</span>
-    <!-- 廣告單元 3：試算器前（踩雷之後）｜建議在 AdSense 後台建立「多媒體廣告 → 回應式」 -->
+    <!-- 廣告單元 3：試算器前（踩雷之後）｜建議在 AdSense 後台建立「多媒體廣告 → 回應式」
+         取得單元 ID 後：把下方 AD_SLOT_3 換成 10 位數字，解除註解，並移除 aside 的 is-empty class
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-6600085221791202"
@@ -909,6 +910,7 @@ footer strong{color:var(--ink-2)}
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
   </aside>
 </div>
 
