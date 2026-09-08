@@ -263,10 +263,69 @@ h3:first-child{margin-top:0}
 .steps p{font-size:16px;margin:0 0 1em}
 .steps p:last-child{margin-bottom:0}
 
+/* ---------- 圖解共用 ---------- */
+figure.fig{margin:22px 0;padding:0}
+figure.fig figcaption{font-size:13px;color:var(--ink-3);margin-top:10px;text-align:center;line-height:1.7}
+.diagram{background:var(--card-bg);border:1px solid var(--line);border-radius:var(--radius-md);padding:22px 20px;box-shadow:var(--card-shadow-sm)}
+
+/* 舊制 vs 新制 金流 */
+.oldnew{display:grid;grid-template-columns:1fr;gap:12px}
+.oldnew__row{border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px;background:var(--bg-soft-cream)}
+.oldnew__row.is-new{border-color:#bcd9ef;background:var(--tint-blue)}
+.oldnew__tag{display:inline-block;font-size:12px;font-weight:750;padding:2px 10px;border-radius:999px;margin-bottom:12px;background:var(--line);color:var(--ink-2)}
+.oldnew__row.is-new .oldnew__tag{background:var(--primary-fuji-blue);color:#fff}
+.chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chain__node{display:flex;align-items:center;gap:8px;background:var(--card-bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px;line-height:1.5}
+.chain__node svg{width:26px;height:26px;flex:0 0 auto}
+.chain__node b{font-weight:750;white-space:nowrap}
+.chain__arrow{color:var(--ink-3);font-weight:700;flex:0 0 auto}
+.chain__money{font-weight:800;color:var(--red-ink);white-space:nowrap}
+.chain__money.is-back{color:var(--green-ink)}
+
+/* GREEN / RED 判定 */
+.judge__start{display:flex;align-items:center;gap:12px;justify-content:center;padding-bottom:16px;font-size:16px;font-weight:750}
+.judge__start svg{width:40px;height:40px;flex:0 0 auto}
+.judge__b{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.judge__b{grid-template-columns:1fr}}
+.judge__b>div{border-radius:var(--radius-sm);padding:14px 16px;border:1px solid}
+.judge__g{background:var(--tint-green);border-color:#b6e8ce}
+.judge__r{background:var(--tint-red);border-color:#f8b4b4}
+.lamp{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.lamp--g{background:var(--success-green)}
+.lamp--r{background:var(--accent-torii-red)}
+.judge__b b{display:block;font-size:15px;margin-bottom:5px}
+.judge__g b{color:var(--green-ink)}
+.judge__r b{color:var(--red-ink)}
+.judge__b p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.7}
+.judge__end{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px;color:var(--ink-2);line-height:1.9}
+.judge__end b{font-weight:800}
+.judge__end .ok{color:var(--green-ink)}
+.judge__end .ng{color:var(--red-ink)}
+
+/* 機場動線順序 */
+.order{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0;padding:0}
+@media (max-width:560px){.order{grid-template-columns:repeat(2,1fr)}}
+.order li{position:relative;text-align:center;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 8px;background:var(--bg-soft-cream)}
+.order li.is-key{border-color:var(--accent-torii-red);border-width:2px;background:var(--tint-red)}
+.order li svg{width:34px;height:34px;margin:0 auto 8px;display:block}
+.order li b{display:block;font-size:14px;line-height:1.5}
+.order li.is-key b{color:var(--red-ink)}
+.order li span{display:block;font-size:12.5px;color:var(--ink-3);margin-top:3px;line-height:1.5}
+.order__n{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--primary-fuji-blue);color:#fff;font-size:11.5px;font-weight:800;display:grid;place-items:center}
+.order li.is-key .order__n{background:var(--accent-torii-red)}
+
+/* 稅額拆解條 */
+.taxbar__track{display:flex;height:52px;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--line)}
+.taxbar__net{flex:10;background:var(--tint-blue);display:grid;place-items:center;font-size:14.5px;font-weight:700;color:var(--blue-ink)}
+.taxbar__tax{flex:1;background:var(--success-green);display:grid;place-items:center;font-size:13px;font-weight:800;color:#0d3d24;min-width:56px}
+.taxbar__label{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-3);margin-top:9px}
+.taxbar__label b{color:var(--green-ink);font-weight:750}
+
 /* ---------- 兩種方式 ---------- */
 .ways{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
 @media (max-width:520px){.ways{grid-template-columns:1fr}}
-.ways>div{border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;background:var(--bg-soft-cream)}
+.ways>div{border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 16px;background:var(--bg-soft-cream);text-align:center}
+.ways .ico{width:62px;height:62px;margin:0 auto 12px;display:block}
 .ways .w-tag{display:inline-block;font-size:12px;font-weight:750;color:#fff;background:var(--primary-fuji-blue);padding:2px 10px;border-radius:999px;margin-bottom:7px}
 .ways b{display:block;font-size:15.5px;color:var(--text-dark-gray);margin-bottom:3px}
 .ways span{font-size:14px;color:var(--ink-2);line-height:1.7}
@@ -505,6 +564,36 @@ footer strong{color:var(--ink-2)}
         </div>
       </div>
 
+
+      <figure class="fig">
+        <div class="diagram oldnew">
+          <div class="oldnew__row">
+            <span class="oldnew__tag">舊制　～2026/10/31</span>
+            <div class="chain">
+              <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h22v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" fill="#cfe0ee"/><path d="M4 6h24l2 6H2z" fill="#2980b9"/><rect x="12" y="18" width="8" height="10" rx="1" fill="#2980b9"/></svg><b>店裡結帳</b></span>
+              <span class="chain__arrow">→</span>
+              <span class="chain__money">只付 8,000 円</span>
+              <span class="chain__arrow">→</span>
+              <span class="chain__node"><b>結束</b></span>
+            </div>
+          </div>
+          <div class="oldnew__row is-new">
+            <span class="oldnew__tag">新制　2026/11/1～</span>
+            <div class="chain">
+              <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h22v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" fill="#cfe0ee"/><path d="M4 6h24l2 6H2z" fill="#2980b9"/><rect x="12" y="18" width="8" height="10" rx="1" fill="#2980b9"/></svg><b>店裡結帳</b></span>
+              <span class="chain__arrow">→</span>
+              <span class="chain__money">先付 8,800 円</span>
+              <span class="chain__arrow">→</span>
+              <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 18l28-9-6 12-7-2-4 7-2-6z" fill="#2980b9"/></svg><b>機場海關確認</b></span>
+              <span class="chain__arrow">→</span>
+              <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="#d8f2e4"/><path d="M10 10l6 7 6-7M11 18h10M11 22h10M16 17v8" stroke="#1e8449" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><b>退款</b></span>
+              <span class="chain__money is-back">＋800 円</span>
+            </div>
+          </div>
+        </div>
+        <figcaption>同樣一筆 8,800 円（含稅）的消費，新舊制的差別在「錢什麼時候回到你手上」</figcaption>
+      </figure>
+
       <p>先講好消息。以前買零食藥妝，店員得把東西塞進封口袋，在日本一口都不能先吃；買太多超過 50 萬日圓又不能退；有時候還會被當成代購而婉拒。這些麻煩，新制全部拿掉了。</p>
       <p>代價就是——錢要晚一點，才回到你口袋。</p>
 
@@ -647,11 +736,13 @@ footer strong{color:var(--ink-2)}
 
           <div class="ways">
             <div>
+              <svg class="ico" viewBox="0 0 64 64" role="img" aria-label="手機顯示 Visit Japan Web 免稅 QR Code"><rect x="15" y="4" width="34" height="56" rx="6" fill="#2c3e50"/><rect x="19" y="11" width="26" height="42" rx="2" fill="#fff"/><g fill="#2c3e50"><rect x="22" y="15" width="7" height="7" rx="1"/><rect x="35" y="15" width="7" height="7" rx="1"/><rect x="22" y="28" width="7" height="7" rx="1"/><rect x="31" y="26" width="3" height="3"/><rect x="36" y="26" width="3" height="3"/><rect x="41" y="30" width="3" height="3"/><rect x="36" y="31" width="3" height="3"/><rect x="31" y="35" width="3" height="3"/><rect x="22" y="39" width="3" height="3"/><rect x="27" y="39" width="3" height="3"/><rect x="36" y="39" width="6" height="3"/><rect x="22" y="45" width="12" height="3" rx="1.5" opacity=".35"/></g><circle cx="25.5" cy="18.5" r="1.6" fill="#fff"/><circle cx="38.5" cy="18.5" r="1.6" fill="#fff"/><circle cx="25.5" cy="31.5" r="1.6" fill="#fff"/><circle cx="32" cy="57" r="1.7" fill="#fff" opacity=".45"/></svg>
               <span class="w-tag">方法 1</span>
               <b>Visit Japan Web 的免稅 QR Code</b>
               <span>當場打開 App 出示，不用把護照交出去</span>
             </div>
             <div>
+              <svg class="ico" viewBox="0 0 64 64" role="img" aria-label="護照"><rect x="12" y="5" width="42" height="54" rx="5" fill="#2980b9"/><rect x="12" y="5" width="7" height="54" rx="3.5" fill="#1c6491"/><circle cx="37" cy="25" r="10.5" fill="none" stroke="#fff" stroke-width="2"/><ellipse cx="37" cy="25" rx="4.6" ry="10.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M26.6 25h20.8M28.6 19h16.8M28.6 31h16.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><rect x="26" y="43" width="22" height="3" rx="1.5" fill="#fff" opacity=".9"/><rect x="30" y="50" width="14" height="3" rx="1.5" fill="#fff" opacity=".55"/></svg>
               <span class="w-tag">方法 2</span>
               <b>直接出示護照本人</b>
               <span>最保險，所有店家都接受</span>
@@ -718,10 +809,42 @@ footer strong{color:var(--ink-2)}
       <p class="lead">機台本身只要幾秒鐘，但被判紅燈就要多花時間，旺季也可能排隊。</p>
     </div>
     <div class="sec__body">
+
+      <figure class="fig">
+        <div class="diagram">
+          <ol class="order">
+            <li class="is-key"><span class="order__n">1</span><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="3" width="26" height="24" rx="3" fill="#2980b9"/><rect x="10" y="6" width="20" height="13" rx="1.5" fill="#fff"/><rect x="13" y="21" width="14" height="3" rx="1.5" fill="#cfe0ee"/><rect x="16" y="27" width="8" height="9" fill="#1c6491"/><rect x="11" y="35" width="18" height="3" rx="1.5" fill="#1c6491"/></svg><b>免稅機台</b><span>刷護照</span></li>
+            <li><span class="order__n">2</span><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="15" y="4" width="10" height="6" rx="2" fill="none" stroke="#8a9aab" stroke-width="2.4"/><rect x="7" y="10" width="26" height="25" rx="3" fill="#2980b9"/><rect x="18" y="10" width="4" height="25" fill="#1c6491"/></svg><b>託運行李</b></li>
+            <li><span class="order__n">3</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4l13 5v10c0 8-5.5 14-13 17C12.5 33 7 27 7 19V9z" fill="#cfe0ee"/><path d="M14 20l4.5 4.5L27 16" stroke="#2980b9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>安檢</b></li>
+            <li><span class="order__n">4</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 22l30-10-6 13-7-2-4 8-2-7z" fill="#2980b9"/><rect x="6" y="33" width="28" height="3" rx="1.5" fill="#cfe0ee"/></svg><b>登機</b></li>
+          </ol>
+        </div>
+        <figcaption>順序絕對不能顛倒 —— 免稅手續一定要在託運行李<strong>之前</strong>完成</figcaption>
+      </figure>
+
       <div class="warning-box">
         <h4>絕對不要先託運行李</h4>
         <p>官方 Q&amp;A 寫得很清楚：<strong>行李一旦託運出去，就無法拉回來重辦。</strong>刷機台的時候，全部的免稅商品都必須在你手上。</p>
       </div>
+
+
+      <figure class="fig">
+        <div class="diagram">
+          <div class="judge__start"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="8" width="30" height="24" rx="3" fill="#2980b9"/><rect x="9" y="12" width="22" height="12" rx="1.5" fill="#fff"/><rect x="12" y="15" width="16" height="2.4" rx="1.2" fill="#2980b9"/><rect x="12" y="19.5" width="10" height="2.4" rx="1.2" fill="#cfe0ee"/><rect x="14" y="27" width="12" height="2.4" rx="1.2" fill="#cfe0ee"/></svg><span>在機台出示護照</span></div>
+          <div class="judge__b">
+            <div class="judge__g">
+              <b><span class="lamp lamp--g"></span>GREEN 判定</b>
+              <p>免查驗，手續完成。<br>可以去託運行李了。</p>
+            </div>
+            <div class="judge__r">
+              <b><span class="lamp lamp--r"></span>RED 判定</b>
+              <p>需要海關查驗，<br>把免稅商品拿出來給海關看。</p>
+            </div>
+          </div>
+          <p class="judge__end">被判 RED 之後：商品都在身上 → <b class="ok">通過，可退款</b>　·　少了商品 → <b class="ng">整筆不能退款</b></p>
+        </div>
+        <figcaption>資料來源：國稅庁「リファンド方式」制度解說</figcaption>
+      </figure>
 
       <p>官方也明講，<strong>必須在辦理登機手續之前完成海關確認</strong>，所以請提早到機場。萬一因此錯過班機，日本政府是不會賠的。</p>
       <p>成田、羽田、關西、中部、福岡、新千歲、那霸這 7 個機場，還可以用 <strong>Visit Japan Web</strong>，在出境大廳的專用 Wi-Fi 範圍內線上完成，連機台都不用排。</p>
@@ -816,6 +939,18 @@ footer strong{color:var(--ink-2)}
         </div>
         <p class="hint" id="calcHint">※ 門檻以「同店、同日、未稅合計 5,000 日圓以上」判斷。實際入帳金額可能因各店家或退款業者的匯款、手續費而略有差異。</p>
       </div>
+
+
+      <figure class="fig">
+        <div class="diagram">
+          <div class="taxbar__track">
+            <div class="taxbar__net">未稅 10,000 円</div>
+            <div class="taxbar__tax">稅 1,000</div>
+          </div>
+          <div class="taxbar__label"><span>你實際付出去的：11,000 円</span><span>可退回：<b>1,000 円</b></span></div>
+        </div>
+        <figcaption>1,000 ÷ 11,000 ≈ 9.09%　—— 這就是實際折扣率低於 10% 的原因</figcaption>
+      </figure>
 
       <div class="warning-box warning-box--info">
         <h4>為什麼不是整整 10%？</h4>
