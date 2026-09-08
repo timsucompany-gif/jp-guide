@@ -4,30 +4,55 @@
 純 HTML / CSS / JS，零外部相依，可直接放上 GitHub Pages。
 單一淺色版本（無深色模式）；桌機為雙欄編輯式排版，手機自動收合成單欄。
 
-## 檔案
+## 資料夾結構
 
-| 檔案 | 用途 |
-| --- | --- |
-| `index.html` | 網站本體（含全部 CSS / JS / 結構化資料） |
-| `og.png` | 社群分享縮圖 1200×630 |
-| `banner.jpg` | 首頁主視覺 1408×768（已壓縮至 265KB） |
-| `banner-original.jpg` | 主視覺原始檔備份，可刪 |
-| `favicon.svg` / `favicon.ico` / `favicon-32.png` / `apple-touch-icon.png` | 網站圖示（日本國旗 日の丸） |
-| `ads.txt` | AdSense 必備，**必須放在網域根目錄** |
-| `robots.txt` | 搜尋引擎爬取規則 + sitemap 位置 |
-| `sitemap.xml` | 網站地圖 |
+```
+jp-guide/                      ← repo 根目錄＝ /jp-guide/
+├── index.html                 2026 日本退稅新制懶人包（首篇文章）
+├── banner.jpg                 上篇文章的主視覺
+├── privacy.html               隱私權政策
+│
+├── assets/                    全站共用資產
+│   ├── favicon.svg / .ico / favicon-32.png / apple-touch-icon.png
+│   └── og.png                 備用社群縮圖
+│
+├── visit-japan-web/           每篇新文章 = 一個資料夾
+│   ├── index.html
+│   └── banner.jpg             該篇專用的圖片放同層
+│
+├── ads.txt  robots.txt  sitemap.xml
+└── README.md
+```
 
-## 主視覺 banner.jpg
+### 新增文章的規則
 
-首頁最上方的橫幅是 `banner.jpg`（1408×768）。原始檔 957KB 已重新壓縮成 265KB
-（progressive JPEG，品質 82），對 LCP 分數差很多；原檔備份為 `banner-original.jpg`。
+1. 建一個**英文小寫、用連字號**的資料夾，例如 `jr-pass/`、`japan-esim/`
+   資料夾名稱就是網址：`/jp-guide/jr-pass/`
+2. 文章寫在該資料夾的 `index.html`
+3. **該篇專用的圖片放同一個資料夾**（`banner.jpg` 等），不要丟到根目錄
+4. 共用的圖示、字型一律放 `assets/`
+5. 完成後三件事：
+   - `sitemap.xml` 新增一筆 `<url>`
+   - 入口頁（`timsucompany-gif.github.io` repo）新增一張文章卡
+   - 跟既有文章互相加連結（對 SEO 幫助很大）
+
+> CSS 目前是每頁內嵌的。這是刻意的選擇 —— 內容站的訪客多半從搜尋結果直接進單一頁面就離開，
+> 內嵌可省掉一次外部請求，首屏更快。等文章多到十篇以上再考慮抽成共用 CSS 檔。
+
+## 主視覺圖片
+
+每篇文章最上方的橫幅放在該篇資料夾裡，檔名統一 `banner.jpg`，尺寸 1408×768。
+
+退稅文的原始檔 957KB 已壓縮成 265KB（progressive JPEG，品質 82），對 LCP 分數差很多；
+原檔備份為 `banner-original.jpg`（已加入 .gitignore，不會上傳）。
 
 要換圖的話，存成同名 `banner.jpg` 蓋掉即可，並記得同步改 `index.html` 裡
 `<img src="banner.jpg" width="1408" height="768">` 的尺寸。
 **圖片載入失敗時整個區塊會自動移除**，不會出現破圖。
 
-這張圖同時也是 `og:image`（社群分享縮圖）。想改回原本那張純文字卡的話，
-把 `index.html` 裡 `og:image` / `twitter:image` 改成 `og.png`、尺寸改 1200×630。
+banner 同時也是該篇的 `og:image`（社群分享縮圖），所以換圖時記得一併確認 `<meta property="og:image">` 的網址與尺寸。
+
+`assets/og.png`（1200×630 的純文字卡）是備用縮圖，目前沒有被引用。
 
 ## 部署到 GitHub Pages（方案 A：根目錄）
 
