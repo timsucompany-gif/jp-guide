@@ -311,8 +311,8 @@ figure.fig figcaption{font-size:13px;color:var(--ink-3);margin-top:10px;text-ali
 .order li b{display:block;font-size:14px;line-height:1.5}
 .order li.is-key b{color:var(--red-ink)}
 .order li span{display:block;font-size:12.5px;color:var(--ink-3);margin-top:3px;line-height:1.5}
-.order__n{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--primary-fuji-blue);color:#fff;font-size:11.5px;font-weight:800;display:grid;place-items:center}
-.order li.is-key .order__n{background:var(--accent-torii-red)}
+.order li .order__n{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:20px;height:20px;margin:0;border-radius:50%;background:var(--primary-fuji-blue);color:#fff;font-size:11.5px;font-weight:800;display:grid;place-items:center;line-height:1}
+.order li.is-key .order__n{background:var(--accent-torii-red);color:#fff}
 
 /* 稅額拆解條 */
 .taxbar__track{display:flex;height:52px;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--line)}
@@ -742,7 +742,7 @@ footer strong{color:var(--ink-2)}
               <span>當場打開 App 出示，不用把護照交出去</span>
             </div>
             <div>
-              <svg class="ico" viewBox="0 0 64 64" role="img" aria-label="護照"><rect x="12" y="5" width="42" height="54" rx="5" fill="#2980b9"/><rect x="12" y="5" width="7" height="54" rx="3.5" fill="#1c6491"/><circle cx="37" cy="25" r="10.5" fill="none" stroke="#fff" stroke-width="2"/><ellipse cx="37" cy="25" rx="4.6" ry="10.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M26.6 25h20.8M28.6 19h16.8M28.6 31h16.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><rect x="26" y="43" width="22" height="3" rx="1.5" fill="#fff" opacity=".9"/><rect x="30" y="50" width="14" height="3" rx="1.5" fill="#fff" opacity=".55"/></svg>
+              <svg class="ico" viewBox="0 0 64 64" role="img" aria-label="護照"><rect x="12" y="5" width="42" height="54" rx="5" fill="#1e6b4a"/><rect x="12" y="5" width="7" height="54" rx="3.5" fill="#154f37"/><circle cx="37" cy="25" r="10.5" fill="none" stroke="#fff" stroke-width="2"/><ellipse cx="37" cy="25" rx="4.6" ry="10.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M26.6 25h20.8M28.6 19h16.8M28.6 31h16.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><rect x="26" y="43" width="22" height="3" rx="1.5" fill="#fff" opacity=".9"/><rect x="30" y="50" width="14" height="3" rx="1.5" fill="#fff" opacity=".55"/></svg>
               <span class="w-tag">方法 2</span>
               <b>直接出示護照本人</b>
               <span>最保險，所有店家都接受</span>
