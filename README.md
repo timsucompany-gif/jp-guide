@@ -17,11 +17,15 @@ jp-guide/                      ← repo 根目錄＝ /jp-guide/
 │
 ├── tax-refund/                ← 每篇文章 = 一個資料夾
 │   ├── index.html             2026 日本退稅新制懶人包
-│   └── banner.jpg             該篇專用圖片放同層
+│   └── images/                ← 該篇的所有圖片
+│       ├── banner.jpg         主視覺（壓縮後，網站實際使用）
+│       └── banner-original.jpg  原始大檔備份（.gitignore 不上傳）
 │
 ├── visit-japan-web/
 │   ├── index.html             Visit Japan Web 完整教學
-│   └── banner.jpg
+│   └── images/
+│       ├── banner.jpg
+│       └── banner-original.jpg
 │
 ├── ads.txt  robots.txt  sitemap.xml
 └── README.md
@@ -41,9 +45,9 @@ jp-guide/                      ← repo 根目錄＝ /jp-guide/
 1. 建一個**英文小寫、用連字號**的資料夾，例如 `jr-pass/`、`japan-esim/`
    資料夾名稱就是網址：`/jp-guide/jr-pass/`
 2. 文章寫在該資料夾的 `index.html`
-3. **該篇專用的圖片放同一個資料夾**（`banner.jpg` 等），不要丟到根目錄
+3. **該篇的所有圖片放 `images/` 子資料夾**，主視覺固定命名 `banner.jpg`
 4. 共用的圖示一律放 `assets/`
-5. **站內連結一律用相對路徑**（`../tax-refund/`、`../assets/favicon.svg`），
+5. **站內連結一律用相對路徑**（`../tax-refund/`、`../assets/favicon.svg`、`images/banner.jpg`），
    不要寫 `/jp-guide/...`。這樣本機預覽才測得到，未來換自訂網域也不用改。
 6. 完成後四件事：
    - `sitemap.xml` 新增一筆 `<url>`
@@ -51,23 +55,18 @@ jp-guide/                      ← repo 根目錄＝ /jp-guide/
    - 入口頁（`timsucompany-gif.github.io` repo）也新增一張卡片
    - 跟既有文章互相加連結（對 SEO 幫助很大）
 
+### 圖片規範
+
+- **尺寸 1408×768**（1.833:1），跟現有兩篇一致
+- **壓縮到 300 KB 以內**：banner 是首屏的 LCP 圖片，太大會直接扣 PageSpeed 分數
+  ```
+  python -c "from PIL import Image; im=Image.open('images/banner-original.jpg').convert('RGB'); im.save('images/banner.jpg','JPEG',quality=82,optimize=True,progressive=True,subsampling=1)"
+  ```
+- 原始大檔存成 `banner-original.jpg`，已在 `.gitignore`，不會上傳
+- 換圖後記得確認 HTML 裡的 `width`／`height`／`og:image` 尺寸是否一致
+
 > CSS 目前是每頁內嵌的。這是刻意的選擇 —— 內容站的訪客多半從搜尋結果直接進單一頁面就離開，
 > 內嵌可省掉一次外部請求，首屏更快。等文章多到十篇以上再考慮抽成共用 CSS 檔。
-
-## 主視覺圖片
-
-每篇文章最上方的橫幅放在該篇資料夾裡，檔名統一 `banner.jpg`，尺寸 1408×768。
-
-退稅文的原始檔 957KB 已壓縮成 265KB（progressive JPEG，品質 82），對 LCP 分數差很多；
-原檔備份為 `banner-original.jpg`（已加入 .gitignore，不會上傳）。
-
-要換圖的話，存成同名 `banner.jpg` 蓋掉即可，並記得同步改 `index.html` 裡
-`<img src="banner.jpg" width="1408" height="768">` 的尺寸。
-**圖片載入失敗時整個區塊會自動移除**，不會出現破圖。
-
-banner 同時也是該篇的 `og:image`（社群分享縮圖），所以換圖時記得一併確認 `<meta property="og:image">` 的網址與尺寸。
-
-`assets/og.png`（1200×630 的純文字卡）是備用縮圖，目前沒有被引用。
 
 ## 部署到 GitHub Pages（方案 A：根目錄）
 
