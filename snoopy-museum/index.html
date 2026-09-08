@@ -422,6 +422,7 @@ footer strong{color:var(--ink-2)}
 /* 課程卡 */
 .course{display:grid;gap:16px;margin:0 0 20px}
 @media (min-width:700px){.course{grid-template-columns:1fr 1fr}}
+.course__img{width:100%;height:auto;border-radius:var(--radius-sm);margin:0 0 14px;display:block}
 .course__item{background:var(--card-bg);border:1px solid var(--line);border-left:5px solid var(--line);border-radius:var(--radius-md);padding:20px 22px;box-shadow:var(--card-shadow-sm)}
 .course__item.is-need{border-left-color:var(--accent-torii-red)}
 .course__item.is-free{border-left-color:var(--success-green)}
@@ -439,6 +440,14 @@ footer strong{color:var(--ink-2)}
 .btn--ghost{background:var(--tint-blue);color:var(--blue-ink);border:1px solid #bcd9ef}
 .btn--lg{font-size:16px;padding:13px 26px}
 .cta-line{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+
+/* 時間軸 */
+.timeline{display:grid;gap:12px;margin:0 0 20px}
+.timeline__step{position:relative;background:var(--card-bg);border:1px solid var(--line);border-left:5px solid var(--primary-fuji-blue);border-radius:var(--radius-sm);padding:16px 18px}
+.timeline__step.is-key{border-left-color:var(--accent-torii-red);background:var(--tint-red)}
+.timeline__step b{display:block;font-size:15.5px;margin-bottom:4px;color:var(--blue-ink)}
+.timeline__step.is-key b{color:var(--red-ink)}
+.timeline__step span{font-size:15px;color:var(--ink-2);line-height:1.8}
 
 /* 事實列 */
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:0 0 20px}
@@ -472,6 +481,7 @@ footer strong{color:var(--ink-2)}
 .rules__item.is-danger h3{color:var(--red-ink)}
 .rules__item p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.8}
 
+.sub-h3{font-size:19px;font-weight:800;margin:28px 0 10px;line-height:1.5}
 .closing{text-align:center;font-size:17px;font-weight:700;color:var(--ink-2);margin:28px 0 0}
 </style>
 </head>
@@ -537,27 +547,31 @@ footer strong{color:var(--ink-2)}
 
     <div class="course">
       <div class="course__item is-need">
+        <img class="course__img" src="images/course-snoopy.jpg" alt="完成的史努比玩偶，T 恤上印著名字與日期" width="640" height="360" loading="lazy" decoding="async">
         <span class="course__tag is-red">需提前預約</span>
         <h3>🤍 史努比玩偶</h3>
         <p class="course__spec"><strong>6,600 円</strong>（含稅）　·　80 分鐘　·　每場 16 人　·　小學生以上</p>
         <p>把棉花填進史努比身體，選衣服和項圈顏色，T 恤上會印你填的名字和日期。做完附出生證明書。</p>
         <p class="course__btns">
           <a class="btn" href="https://eplus.tickets/en/sf/ibt/event/snoopy-workshop" target="_blank" rel="noopener">前往預約（國際站・免註冊）</a>
-          <a class="btn btn--ghost" href="https://eplus.jp/sf/detail/4253000001" target="_blank" rel="noopener">日本站頁面</a>
+          <a class="btn btn--ghost" href="https://eplus.jp/sf/word/0000168168" target="_blank" rel="noopener">日本站頁面</a>
         </p>
       </div>
 
       <div class="course__item is-need">
+        <img class="course__img" src="images/course-plush.jpg" alt="玩偶課程一開始拿到的娃娃外皮" width="640" height="360" loading="lazy" decoding="async">
         <span class="course__tag is-red">需提前預約</span>
         <h3>💛 糊塗塌客 Woodstock 玩偶</h3>
         <p class="course__spec"><strong>6,600 円</strong>（含稅）　·　80 分鐘　·　每場 16 人　·　小學生以上</p>
         <p>做法跟史努比一樣，配件換成 T 恤和頭巾。<strong>場次比史努比少非常多</strong>，通常一個月只開一兩天，要更早盯。</p>
         <p class="course__btns">
           <a class="btn" href="https://eplus.tickets/en/sf/ibt/event/snoopy-workshop" target="_blank" rel="noopener">前往預約（國際站・免註冊）</a>
+          <a class="btn btn--ghost" href="https://eplus.jp/sf/word/0000168168" target="_blank" rel="noopener">日本站頁面</a>
         </p>
       </div>
 
       <div class="course__item is-free">
+        <img class="course__img" src="images/course-accessory.jpg" alt="教室裡的配件與顏色選擇" width="640" height="360" loading="lazy" decoding="async">
         <span class="course__tag is-green">免預約</span>
         <h3>🩶 史努比吊飾／鑰匙圈</h3>
         <p class="course__spec">現場付費　·　最多 30 分鐘　·　<strong>需當日入館券</strong></p>
@@ -568,6 +582,7 @@ footer strong{color:var(--ink-2)}
       </div>
 
       <div class="course__item is-free">
+        <img class="course__img" src="images/course-badge.jpg" alt="館內的拍照場景" width="640" height="360" loading="lazy" decoding="async">
         <span class="course__tag is-green">免預約・天天有</span>
         <h3>🖤 史努比別針徽章</h3>
         <p class="course__spec">現場付費　·　<strong>需當日入館券</strong>　·　限信用卡或交通 IC</p>
@@ -578,7 +593,7 @@ footer strong{color:var(--ink-2)}
       </div>
     </div>
 
-    <p class="note-line">💡 免預約的兩種都在館內，<strong>要先買入館券才能參加</strong>，而且不適用玩偶課的入館優惠。玩偶課的教室在展示室入口<strong>之前</strong>，所以只上課不逛館的話不用買入館券。</p>
+    <p class="note-line">💡 免預約的兩種都在館內，<strong>要先買入館券才能參加</strong>，而且不適用玩偶課的入館優惠。玩偶課的教室在展示室入口<strong>之前</strong>，所以只上課不逛館的話不用買入館券 —— 但<strong>紀念品店（BROWN'S STORE）也需要門票</strong>，想買周邊還是得買入館券。</p>
   </div>
 </section>
 
@@ -607,24 +622,22 @@ footer strong{color:var(--ink-2)}
       <a class="btn btn--lg" href="https://snoopymuseum.tokyo/s/smt/group/list?ima=0000&amp;cd=workshop" target="_blank" rel="noopener">🗓️ 每月手作課程行事曆</a>
     </p>
 
-    <div class="facts">
-      <div class="facts__item">
-        <b>下個月的行事曆</b>
-        <span>前一個月<strong>初</strong>公布</span>
+    <div class="timeline">
+      <div class="timeline__step">
+        <b>① 前一個月「月初」</b>
+        <span>官網公布下個月的課程行事曆 —— 這時候先看清楚你想做的課開在哪幾天</span>
       </div>
-      <div class="facts__item">
-        <b>玩偶課開賣時間</b>
-        <span>前一個月<strong>中旬 18:00</strong>（日本時間）</span>
+      <div class="timeline__step">
+        <b>② 前一個月「中旬」</b>
+        <span>eplus 開賣，時間是<strong>日本時間 18:00 ／ 台灣時間 17:00</strong></span>
       </div>
-      <div class="facts__item">
-        <b>台灣時間</b>
-        <span>下午 <strong>17:00</strong></span>
-      </div>
-      <div class="facts__item">
-        <b>怎麼賣</b>
-        <span><strong>先着順</strong>，不是抽籤</span>
+      <div class="timeline__step is-key">
+        <b>③ 開賣當下</b>
+        <span><strong>先搶先贏，不是抽籤。</strong>提早幾分鐘把頁面打開、信用卡準備好</span>
       </div>
     </div>
+
+    <p class="note-line">📌 這是兩個不同的時間點：<strong>月初先公布課表，半個月後才開賣</strong>。所以想搶的話，前一個月初就要開始盯行事曆。</p>
 
     <p class="note-line">📌 以 2026 年 9 月場次為例，是 <strong>8 月 15 日（六）18:00</strong> 開賣。但官方寫明<strong>開賣日期不定期</strong>，想搶的話前一個月初就要開始盯行事曆。</p>
 
@@ -748,7 +761,7 @@ footer strong{color:var(--ink-2)}
       <span class="step-head__n">📍</span>
       <div>
         <h2>博物館資訊</h2>
-        <p>南町田グランベリーパーク，從澀谷約 35～40 分鐘。</p>
+        <p>南町田グランベリーパーク，從澀谷搭急行約 35 分鐘，出站步行 4 分鐘。</p>
       </div>
     </div>
 
@@ -764,7 +777,7 @@ footer strong{color:var(--ink-2)}
       </div>
       <div class="facts__item">
         <b>交通</b>
-        <span>東急田園都市線「南町田グランベリーパーク」站</span>
+        <span>東急田園都市線「南町田グランベリーパーク」站<br>澀谷搭<strong>急行約 35 分</strong>、新橫濱約 20 分，出站<strong>步行 4 分</strong></span>
       </div>
       <div class="facts__item">
         <b>平日</b>
@@ -781,6 +794,50 @@ footer strong{color:var(--ink-2)}
       <div class="facts__item">
         <b>當日券</b>
         <span>2,200 円／1,100／700</span>
+      </div>
+    </div>
+
+    <h3 class="sub-h3">入館券怎麼買（台灣人適用）</h3>
+    <p>官網日文頁的「前売券を購入する」按鈕會導到 <strong>eplus 日本站</strong>，那個要日本電話註冊。但官方英文頁另外掛了兩個<strong>海外旅客專用</strong>的管道，都可以直接刷卡：</p>
+
+    <div class="course" style="margin-bottom:20px">
+      <div class="course__item is-need" style="border-left-color:var(--primary-fuji-blue)">
+        <span class="course__tag is-red" style="background:var(--tint-blue);color:var(--blue-ink);border-color:#bcd9ef">官方國際站</span>
+        <h3>eplus 國際購票站</h3>
+        <p class="course__spec"><strong>2,000 日圓</strong>（一般・大學生）　·　繁體中文介面</p>
+        <p>跟手作課程同一個系統，一樣免註冊會員。可買到<strong>前一天 20:00</strong>。</p>
+        <p class="course__btns">
+          <a class="btn" href="https://eplus.tickets/en/sf/ibt/event/snoopy-overseas" target="_blank" rel="noopener">前往購買入館券</a>
+        </p>
+      </div>
+
+      <div class="course__item is-free" style="border-left-color:#f39c12">
+        <span class="course__tag is-green" style="background:var(--tint-amber);color:var(--amber-ink);border-color:#f6dfae">官網掛的合作平台</span>
+        <h3>KKday</h3>
+        <p class="course__spec"><strong>NT$449</strong>　·　繁體中文　·　立即確認</p>
+        <p>電子票券直接入場，介面對台灣人最友善。<strong>不可取消</strong>，訂之前確認好日期。</p>
+        <p class="course__btns">
+          <a class="btn" href="https://www.kkday.com/zh-tw/product/251519" target="_blank" rel="noopener">前往 KKday</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="rules" style="margin-bottom:20px">
+      <div class="rules__item is-danger">
+        <h3>當日券不保證買得到</h3>
+        <p>當日券<strong>只在館內人數有餘裕時</strong>才在窗口販售，當天早上 <strong>8:30 之後</strong>才會公布有沒有賣。想確保進得去就先買前售券。</p>
+      </div>
+      <div class="rules__item">
+        <h3>入館是時段制</h3>
+        <p>一天分成 12 個入場時段（10:00、10:30⋯⋯），<strong>要在預約的時段內入場</strong>，但進去之後<strong>停留時間不限</strong>。</p>
+      </div>
+      <div class="rules__item">
+        <h3>不可再入場</h3>
+        <p>出來就不能再進去了。要逛展場的話，記得<strong>在上課前或上課後擇一</strong>，不要來回跑。</p>
+      </div>
+      <div class="rules__item">
+        <h3>票只認手機 QR Code</h3>
+        <p>前售券只能用手機畫面的 QR Code 領取，沒有紙本。記得先把電充飽。</p>
       </div>
     </div>
 
@@ -823,7 +880,7 @@ footer strong{color:var(--ink-2)}
       </details>
       <details>
         <summary>史努比博物館手作課程什麼時候開賣？</summary>
-        <div class="a"><p>大約在<strong>前一個月中旬的日本時間 18:00</strong>（台灣時間 17:00）開賣，採先着順。以 2026 年 9 月場次為例是 8 月 15 日 18:00 開始受理。官方寫明開賣日期<strong>不定期</strong>，下個月的行事曆通常前一個月初公布。</p></div>
+        <div class="a"><p>大約在<strong>前一個月中旬的日本時間 18:00</strong>（台灣時間 17:00）開賣，採先搶先贏的方式。以 2026 年 9 月場次為例是 8 月 15 日 18:00 開始受理。官方寫明開賣日期<strong>不定期</strong>，下個月的行事曆通常前一個月初公布。</p></div>
       </details>
       <details>
         <summary>史努比博物館手作課程多少錢？要多久？</summary>
@@ -847,7 +904,7 @@ footer strong{color:var(--ink-2)}
       </details>
       <details>
         <summary>史努比博物館怎麼去？</summary>
-        <div class="a"><p>地址是<strong>東京都町田市鶴間 3-1-4</strong>，位在南町田グランベリーパーク內。從澀谷搭東急田園都市線到「南町田グランベリーパーク」站，約 35～40 分鐘，出站步行可達。</p><p>營業時間：平日 10:00–18:00（最後入場 17:30）、六日與國定假日 10:00–19:00（最後入場 18:30）。</p></div>
+        <div class="a"><p>地址是<strong>東京都町田市鶴間 3-1-4</strong>，位在南町田グランベリーパーク內。從澀谷搭東急田園都市線<strong>急行約 35 分鐘</strong>到「南町田グランベリーパーク」站，出站<strong>步行 4 分鐘</strong>。新橫濱出發約 20 分鐘。</p><p>營業時間：平日 10:00–18:00（最後入場 17:30）、六日與國定假日 10:00–19:00（最後入場 18:30）。</p></div>
       </details>
       <details>
         <summary>可以現場報名史努比玩偶課程嗎？</summary>
@@ -874,6 +931,9 @@ footer strong{color:var(--ink-2)}
       <li><a href="https://support-qa.eplus.tickets/hc/en-us/articles/48279157740313-Do-I-need-to-register-as-an-eplus-member-to-purchase-tickets" target="_blank" rel="noopener">eplus 客服｜國際站購票是否需要會員</a><small>官方答覆：不需要註冊會員</small></li>
       <li><a href="https://snoopymuseum.tokyo/s/smt/news/detail/10331?ima=0000" target="_blank" rel="noopener">史努比博物館｜罐狀徽章課程</a></li>
       <li><a href="https://snoopymuseum.tokyo/s/smt/news/detail/10308?ima=0000" target="_blank" rel="noopener">史努比博物館｜吊飾課程</a></li>
+      <li><a href="https://eplus.tickets/en/sf/ibt/event/snoopy-overseas" target="_blank" rel="noopener">eplus 國際購票站｜史努比博物館入館券</a><small>海外旅客購買前售券的官方管道，繁體中文</small></li>
+      <li><a href="https://snoopymuseum.tokyo/s/smt/page/access?ima=0000" target="_blank" rel="noopener">史努比博物館｜交通與入館資訊</a><small>營業時間、票價、交通方式的官方頁面</small></li>
+      <li><a href="https://snoopymuseum.tokyo/s/smt/page/english?ima=0000" target="_blank" rel="noopener">史努比博物館｜英文版說明頁</a><small>「世界唯一官方分館」與海外購票管道的出處</small></li>
       <li><a href="https://namehenkan.com/tw" target="_blank" rel="noopener">姓名轉換工具</a><small>中文姓名轉日文讀音與羅馬字</small></li>
     </ul>
 
@@ -942,13 +1002,13 @@ footer strong{color:var(--ink-2)}
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "沒有日本電話可以預約史努比手作課程嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。走 eplus 國際購票站（eplus.tickets）不需要日本電話，eplus 官方客服明確表示從國際網站購票不需要註冊 eplus 會員。國際站有繁體中文介面，票種標示為 International general sales。" } },
-        { "@type": "Question", "name": "史努比博物館手作課程什麼時候開賣？", "acceptedAnswer": { "@type": "Answer", "text": "大約在前一個月中旬的日本時間 18:00（台灣時間 17:00）開賣，採先着順。以 2026 年 9 月場次為例是 8 月 15 日 18:00 開始受理。官方寫明開賣日期不定期。" } },
+        { "@type": "Question", "name": "史努比博物館手作課程什麼時候開賣？", "acceptedAnswer": { "@type": "Answer", "text": "大約在前一個月中旬的日本時間 18:00（台灣時間 17:00）開賣，採先搶先贏的方式。以 2026 年 9 月場次為例是 8 月 15 日 18:00 開始受理。官方寫明開賣日期不定期。" } },
         { "@type": "Question", "name": "史努比博物館手作課程多少錢？要多久？", "acceptedAnswer": { "@type": "Answer", "text": "玩偶課程（史努比與糊塗塌客）皆為 6,600 日圓含稅，時長 80 分鐘，每場定員 16 人，參加對象為小學生以上。費用只含課程，入館券需另外購買。" } },
         { "@type": "Question", "name": "史努比手作課程可以取消或改期嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不行。官方明確表示付款完成後無法取消退款，也無法變更日期時段，額滿場次沒有候補。" } },
         { "@type": "Question", "name": "小孩參加史努比手作課程，家長可以陪嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以，但需另外購買陪同票，一張陪同票限一位陪同者。沒有票的人一律不能進教室，包含家長與未達參加年齡的幼兒。" } },
         { "@type": "Question", "name": "只上課不逛博物館需要買入館券嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不用。手作教室位在展示室入口之前，只參加課程不需入館券。若要逛展場與商店則需購買，參加課程者當天可用前售票價購買。" } },
         { "@type": "Question", "name": "糊塗塌客（Woodstock）的課比較難搶嗎？", "acceptedAnswer": { "@type": "Answer", "text": "是的，場次少非常多。以 2026 年 9 月為例，史努比開了 13 天，糊塗塌客只開 9 月 5 日一天。" } },
-        { "@type": "Question", "name": "史努比博物館怎麼去？", "acceptedAnswer": { "@type": "Answer", "text": "地址為東京都町田市鶴間 3-1-4，位在南町田グランベリーパーク內。從澀谷搭東急田園都市線至南町田グランベリーパーク站約 35 至 40 分鐘。平日 10:00 至 18:00，六日與國定假日 10:00 至 19:00。" } },
+        { "@type": "Question", "name": "史努比博物館怎麼去？", "acceptedAnswer": { "@type": "Answer", "text": "地址為東京都町田市鶴間 3-1-4，位在南町田グランベリーパーク內。從澀谷搭東急田園都市線急行約 35 分鐘至南町田グランベリーパーク站，出站步行 4 分鐘。平日 10:00 至 18:00，六日與國定假日 10:00 至 19:00。" } },
         { "@type": "Question", "name": "可以現場報名史努比玩偶課程嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不行。官方明講博物館窗口不受理報名，必須事先線上購票，付款方式也只接受信用卡。" } }
       ]
     }
