@@ -8,21 +8,33 @@
 
 ```
 jp-guide/                      ← repo 根目錄＝ /jp-guide/
-├── index.html                 2026 日本退稅新制懶人包（首篇文章）
-├── banner.jpg                 上篇文章的主視覺
+├── index.html                 文章總覽（列表頁）
 ├── privacy.html               隱私權政策
 │
 ├── assets/                    全站共用資產
 │   ├── favicon.svg / .ico / favicon-32.png / apple-touch-icon.png
 │   └── og.png                 備用社群縮圖
 │
-├── visit-japan-web/           每篇新文章 = 一個資料夾
-│   ├── index.html
-│   └── banner.jpg             該篇專用的圖片放同層
+├── tax-refund/                ← 每篇文章 = 一個資料夾
+│   ├── index.html             2026 日本退稅新制懶人包
+│   └── banner.jpg             該篇專用圖片放同層
+│
+├── visit-japan-web/
+│   ├── index.html             Visit Japan Web 完整教學
+│   └── banner.jpg
 │
 ├── ads.txt  robots.txt  sitemap.xml
 └── README.md
 ```
+
+網址對照：
+
+| 檔案 | 網址 |
+| --- | --- |
+| `index.html` | `/jp-guide/` |
+| `tax-refund/index.html` | `/jp-guide/tax-refund/` |
+| `visit-japan-web/index.html` | `/jp-guide/visit-japan-web/` |
+| `privacy.html` | `/jp-guide/privacy.html` |
 
 ### 新增文章的規則
 
@@ -30,10 +42,13 @@ jp-guide/                      ← repo 根目錄＝ /jp-guide/
    資料夾名稱就是網址：`/jp-guide/jr-pass/`
 2. 文章寫在該資料夾的 `index.html`
 3. **該篇專用的圖片放同一個資料夾**（`banner.jpg` 等），不要丟到根目錄
-4. 共用的圖示、字型一律放 `assets/`
-5. 完成後三件事：
+4. 共用的圖示一律放 `assets/`
+5. **站內連結一律用相對路徑**（`../tax-refund/`、`../assets/favicon.svg`），
+   不要寫 `/jp-guide/...`。這樣本機預覽才測得到，未來換自訂網域也不用改。
+6. 完成後四件事：
    - `sitemap.xml` 新增一筆 `<url>`
-   - 入口頁（`timsucompany-gif.github.io` repo）新增一張文章卡
+   - `index.html`（文章總覽）新增一張卡片
+   - 入口頁（`timsucompany-gif.github.io` repo）也新增一張卡片
    - 跟既有文章互相加連結（對 SEO 幫助很大）
 
 > CSS 目前是每頁內嵌的。這是刻意的選擇 —— 內容站的訪客多半從搜尋結果直接進單一頁面就離開，
