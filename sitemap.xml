@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://timsucompany-gif.github.io/</loc>
+    <lastmod>2026-09-09T14:45:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://timsucompany-gif.github.io/jp-guide/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09T02:04:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://timsucompany-gif.github.io/jp-guide/tax-refund/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-08T22:00:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://timsucompany-gif.github.io/jp-guide/visit-japan-web/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://timsucompany-gif.github.io/jp-guide/diy-snoopy/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-08T22:00:31+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://timsucompany-gif.github.io/jp-guide/snoopy-museum/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09T04:55:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://timsucompany-gif.github.io/jp-guide/diy-snoopy/</loc>
+    <lastmod>2026-09-09T04:55:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://timsucompany-gif.github.io/jp-guide/privacy.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-08T21:26:10+08:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
