@@ -4,3 +4,7 @@
 # 主視覺原始大檔（網站用的是壓縮過的 banner.jpg）
 banner-original.jpg
 _原始照片/
+
+# 計算機草稿，尚未完成不上線
+PLAN-calculators.md
+_calc-draft/
