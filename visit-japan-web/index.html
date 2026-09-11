@@ -893,7 +893,7 @@ footer strong{color:var(--ink-2)}
 
     set("o-alcohol", oa, oa ? "超過 " + (a - LIM.alcohol) + " 瓶" : "在免稅範圍內");
     set("o-cig",     oc, oc ? "超過 " + nf.format(c - LIM.cig) + " 支" : "在免稅範圍內");
-    set("o-goods",   og, og ? "超過 " + nf.format(g - LIM.goods) + " 円" : "在免稅範圍內");
+    set("o-goods",   og, og ? "超過 " + nf.format(g - LIM.goods) + " 日圓" : "在免稅範圍內");
 
     var all = document.getElementById("o-all");
     if (oa || oc || og) {

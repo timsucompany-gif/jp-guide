@@ -570,7 +570,7 @@ footer strong{color:var(--ink-2)}
             <div class="chain">
               <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h22v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" fill="#cfe0ee"/><path d="M4 6h24l2 6H2z" fill="#2980b9"/><rect x="12" y="18" width="8" height="10" rx="1" fill="#2980b9"/></svg><b>店裡結帳</b></span>
               <span class="chain__arrow">→</span>
-              <span class="chain__money">只付 8,000 円</span>
+              <span class="chain__money">只付 8,000 日圓</span>
               <span class="chain__arrow">→</span>
               <span class="chain__node"><b>結束</b></span>
             </div>
@@ -580,16 +580,16 @@ footer strong{color:var(--ink-2)}
             <div class="chain">
               <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h22v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" fill="#cfe0ee"/><path d="M4 6h24l2 6H2z" fill="#2980b9"/><rect x="12" y="18" width="8" height="10" rx="1" fill="#2980b9"/></svg><b>店裡結帳</b></span>
               <span class="chain__arrow">→</span>
-              <span class="chain__money">先付 8,800 円</span>
+              <span class="chain__money">先付 8,800 日圓</span>
               <span class="chain__arrow">→</span>
               <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 18l28-9-6 12-7-2-4 7-2-6z" fill="#2980b9"/></svg><b>機場海關確認</b></span>
               <span class="chain__arrow">→</span>
               <span class="chain__node"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="#d8f2e4"/><path d="M10 10l6 7 6-7M11 18h10M11 22h10M16 17v8" stroke="#1e8449" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><b>退款</b></span>
-              <span class="chain__money is-back">＋800 円</span>
+              <span class="chain__money is-back">＋800 日圓</span>
             </div>
           </div>
         </div>
-        <figcaption>同樣一筆 8,800 円（含稅）的消費，新舊制的差別在「錢什麼時候回到你手上」</figcaption>
+        <figcaption>同樣一筆 8,800 日圓（含稅）的消費，新舊制的差別在「錢什麼時候回到你手上」</figcaption>
       </figure>
 
       <p>先講好消息。以前買零食藥妝，店員得把東西塞進封口袋，在日本一口都不能先吃；買太多超過 50 萬日圓又不能退；有時候還會被當成代購而婉拒。這些麻煩，新制全部拿掉了。</p>
@@ -934,9 +934,9 @@ footer strong{color:var(--ink-2)}
         </div>
 
         <div class="result">
-          <div class="rrow"><span>未稅金額</span><b id="oNet">10,000 円</b></div>
-          <div class="rrow"><span>5,000 円門檻</span><b id="oOk">達標</b></div>
-          <div class="rrow big"><span>可退稅額</span><b id="oTax">1,000 円</b></div>
+          <div class="rrow"><span>未稅金額</span><b id="oNet">10,000 日圓</b></div>
+          <div class="rrow"><span>5,000 日圓門檻</span><b id="oOk">達標</b></div>
+          <div class="rrow big"><span>可退稅額</span><b id="oTax">1,000 日圓</b></div>
           <div class="rrow"><span>相當於實付的</span><b id="oPct">9.09%</b></div>
         </div>
         <p class="hint" id="calcHint">※ 門檻以「同店、同日、未稅合計 5,000 日圓以上」判斷。實際入帳金額可能因各店家或退款業者的匯款、手續費而略有差異。</p>
@@ -946,10 +946,10 @@ footer strong{color:var(--ink-2)}
       <figure class="fig">
         <div class="diagram">
           <div class="taxbar__track">
-            <div class="taxbar__net">未稅 10,000 円</div>
+            <div class="taxbar__net">未稅 10,000 日圓</div>
             <div class="taxbar__tax">稅 1,000</div>
           </div>
-          <div class="taxbar__label"><span>你實際付出去的：11,000 円</span><span>可退回：<b>1,000 円</b></span></div>
+          <div class="taxbar__label"><span>你實際付出去的：11,000 日圓</span><span>可退回：<b>1,000 日圓</b></span></div>
         </div>
         <figcaption>1,000 ÷ 11,000 ≈ 9.09%　—— 這就是實際折扣率低於 10% 的原因</figcaption>
       </figure>
@@ -1110,8 +1110,8 @@ footer strong{color:var(--ink-2)}
     var rate  = document.querySelector('input[name="rate"]:checked').value === "8" ? 0.08 : 0.10;
     var net   = gross / (1 + rate);
     var tax   = gross - net;
-    document.getElementById("oNet").textContent = nf.format(Math.round(net)) + " 円";
-    document.getElementById("oTax").textContent = nf.format(Math.round(tax)) + " 円";
+    document.getElementById("oNet").textContent = nf.format(Math.round(net)) + " 日圓";
+    document.getElementById("oTax").textContent = nf.format(Math.round(tax)) + " 日圓";
     document.getElementById("oPct").textContent = gross ? (tax / gross * 100).toFixed(2) + "%" : "—";
     var ok = document.getElementById("oOk");
     if (net >= 5000) { ok.textContent = "達標，可退稅"; ok.style.color = "var(--green-ink)"; }
