@@ -83,9 +83,16 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .topbar__in{max-width:860px;margin:0 auto;padding:10px 24px;display:flex;gap:14px;align-items:center}
 .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:var(--text-dark-gray);text-decoration:none;white-space:nowrap}
 .brand__dot{width:23px;height:23px;border-radius:50%;background:var(--primary-fuji-blue);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800;flex:0 0 auto}
-.topbar nav{margin-left:auto;display:flex;gap:4px}
-.topbar nav a{font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 12px;border-radius:999px}
-.topbar nav a:hover{background:var(--tint-blue);color:var(--blue-ink)}
+.sitenav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.sitenav::-webkit-scrollbar{display:none}
+.sitenav a{font-size:14px;font-weight:600;color:var(--text-dark-gray);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;line-height:1.6}
+.sitenav a:hover{background:var(--tint-blue);color:var(--blue-ink);opacity:1}
+.sitenav a[aria-current="page"]{background:var(--tint-blue);color:var(--blue-ink)}
+@media (max-width:480px){
+  .topbar__in{padding:10px 16px;gap:8px}
+  .brand__txt{display:none}
+  .sitenav a{padding:6px 9px;font-size:13.5px}
+}
 
 header.page{padding:52px 0 6px;text-align:center}
 h1{font-size:clamp(27px,5.6vw,36px);line-height:1.42;margin:0 0 14px;font-weight:800;letter-spacing:-.01em}
@@ -133,11 +140,12 @@ footer a{font-weight:600}
 
 <header class="topbar">
   <div class="topbar__in">
-    <a class="brand" href="/"><span class="brand__dot">JP</span>JP Guide</a>
-    <nav aria-label="頁面導覽">
+    <a class="brand" href="/"><span class="brand__dot">JP</span><span class="brand__txt">JP Guide</span></a>
+    <nav class="sitenav" aria-label="網站導覽">
       <a href="#spots">景點體驗</a>
       <a href="#entry">入境準備</a>
       <a href="#shopping">購物退稅</a>
+      <a href="about/">關於</a>
     </nav>
   </div>
 </header>
@@ -252,8 +260,9 @@ footer a{font-weight:600}
 
   <div class="about">
     <h2>關於本站</h2>
-    <p>JP Guide 是個人經營的資訊參考網站，<strong>並非日本政府官方網站</strong>，也不提供任何代辦服務。</p>
-    <p>所有內容都是先查閱日本觀光廳、國稅廳、財務省、數位廳、海關等機關的公開資料與官方 PDF 之後才動筆，並在每篇文末列出原始出處，方便你自行查證。制度細節仍可能隨官方公告調整，實際辦理時請以日本官方最新公告為準。</p>
+    <p>JP Guide 是 Eva 的個人網站，記錄我們在日本旅遊的實際經驗，也整理出發前需要知道的規定與流程。本站<strong>並非日本政府官方網站</strong>，也不提供任何代辦服務。</p>
+    <p>文章分兩種：<strong>實際體驗</strong>是我們親自去過、照片自己拍的；<strong>資料整理</strong>是查閱日本觀光廳、國稅廳、財務省、數位廳、海關等機關的公開資料之後才動筆，並在文末列出原始出處。制度細節仍可能隨官方公告調整，實際辦理時請以日本官方最新公告為準。</p>
+    <p><a href="about/">更多關於 Eva →</a></p>
   </div>
 
 </div>
@@ -261,7 +270,7 @@ footer a{font-weight:600}
 
 <footer>
   <div class="wrap">
-    <p><a href="/">回首頁</a>　·　<a href="privacy.html">隱私權政策</a>　·　<a href="mailto:timsucompany@gmail.com">聯絡我們</a></p>
+    <p><a href="/">回首頁</a>　·　<a href="about/">關於</a>　·　<a href="about/#contact">聯絡我們</a>　·　<a href="privacy.html">隱私權政策</a></p>
     <p>© 2026 JP Guide</p>
   </div>
 </footer>

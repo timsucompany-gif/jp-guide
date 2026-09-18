@@ -72,8 +72,16 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .topbar__in{max-width:var(--maxw);margin:0 auto;padding:10px 24px;display:flex;gap:14px;align-items:center}
 .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:var(--text-dark-gray);text-decoration:none;white-space:nowrap}
 .brand__dot{width:23px;height:23px;border-radius:50%;background:var(--primary-fuji-blue);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800;flex:0 0 auto}
-.topbar a.back{margin-left:auto;font-size:14px;text-decoration:none;color:var(--ink-2);padding:6px 12px;border-radius:999px}
-.topbar a.back:hover{background:var(--tint-blue);color:var(--blue-ink);opacity:1}
+.sitenav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.sitenav::-webkit-scrollbar{display:none}
+.sitenav a{font-size:14px;font-weight:600;color:var(--text-dark-gray);text-decoration:none;padding:6px 12px;border-radius:999px;white-space:nowrap;line-height:1.6}
+.sitenav a:hover{background:var(--tint-blue);color:var(--blue-ink);opacity:1}
+.sitenav a[aria-current="page"]{background:var(--tint-blue);color:var(--blue-ink)}
+@media (max-width:480px){
+  .topbar__in{padding:10px 16px;gap:8px}
+  .brand__txt{display:none}
+  .sitenav a{padding:6px 9px;font-size:13.5px}
+}
 
 header.page{padding:44px 0 8px}
 h1{font-size:clamp(26px,5.4vw,34px);line-height:1.4;margin:0 0 12px;font-weight:800;letter-spacing:-.01em}
@@ -99,8 +107,13 @@ footer a{font-weight:600}
 
 <header class="topbar">
   <div class="topbar__in">
-    <a class="brand" href="./"><span class="brand__dot">JP</span>JP Guide</a>
-    <a class="back" href="./">← 回首頁</a>
+    <a class="brand" href="./"><span class="brand__dot">JP</span><span class="brand__txt">JP Guide</span></a>
+    <nav class="sitenav" aria-label="網站導覽">
+      <a href="./#spots">景點體驗</a>
+      <a href="./#entry">入境準備</a>
+      <a href="./#shopping">購物退稅</a>
+      <a href="about/">關於</a>
+    </nav>
   </div>
 </header>
 
@@ -209,7 +222,7 @@ footer a{font-weight:600}
 <footer>
   <div class="wrap">
     <p>本站為個人經營的資訊參考網站，非日本政府官方網站，也不提供退稅代辦服務。</p>
-    <p><a href="./">← 回到 JP Guide 首頁</a></p>
+    <p><a href="./">← 回到 JP Guide 首頁</a>　·　<a href="about/">關於</a>　·　<a href="about/#contact">聯絡我們</a></p>
   </div>
 </footer>
 
